@@ -6,7 +6,22 @@ const pool = require("./DataBase/Db.js");
 const redirectRoutes = require("./routes/redirectRoutes.js");
 const checkDB = require("./Midlleware/checkDB.js");
 const app = express();
-app.use(cors());
+const allowedOrigins = [
+  "https://tinyurlfrontend-yhlm.onrender.com"
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "DELETE"],
+  allowedHeaders: ["Content-Type"],
+}));
+
 app.use(express.json());
 pool.query("SELECT NOW()")
   .then(() => console.log("DB Connected Successfully"))
