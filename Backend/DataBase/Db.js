@@ -7,7 +7,7 @@ const pool = new Pool({
   }
 });
 
-// Test connection
+
 pool.query("SELECT NOW()")
   .then(() => console.log("Connected to Neon Postgres"))
   .catch(err => console.error("Neon Connection Error:", err.message));
