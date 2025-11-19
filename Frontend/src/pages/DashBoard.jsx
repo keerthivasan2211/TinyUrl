@@ -76,7 +76,7 @@ export default function Dashboard() {
     return dateObj.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
   };
 
-  // ⭐ SEARCH LOGIC
+
   const filteredLinks = links.filter((l) => {
     const term = search.toLowerCase();
     return (
@@ -88,7 +88,6 @@ export default function Dashboard() {
   return (
     <div className="container">
 
-      {/* FORM */}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -109,7 +108,7 @@ export default function Dashboard() {
         </button>
       </form>
 
-      {/* SEARCH BAR */}
+    
       <input
         type="text"
         placeholder="Search by code or URL"
@@ -118,7 +117,7 @@ export default function Dashboard() {
         style={{ marginTop: "10px" }}
       />
 
-      {/* TABLE */}
+   
       <div className="table-wrapper">
         <table className="table">
           <thead>
@@ -132,7 +131,7 @@ export default function Dashboard() {
           </thead>
 
           <tbody>
-            {/* LOADING */}
+          
             {loadingTable ? (
               <tr>
                 <td colSpan="5" className="no-data">Loading...</td>
