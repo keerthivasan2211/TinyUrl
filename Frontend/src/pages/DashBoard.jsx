@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const API = "http://localhost:5000/api/links";
+const API = `https://tinyurl-6mak.onrender.com/links`;
 
 export default function Dashboard() {
   const [links, setLinks] = useState([]);
@@ -64,7 +64,7 @@ export default function Dashboard() {
   };
 
   const copyLink = (code) => {
-    const shortUrl = `http://localhost:5000/${code}`;
+    const shortUrl = `https://tinyurl-6mak.onrender.com/${code}`;
     navigator.clipboard.writeText(shortUrl);
     toast.info("Copied to clipboard!");
   };
