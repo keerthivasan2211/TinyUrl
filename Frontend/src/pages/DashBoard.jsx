@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const API = `https://tinyurl-6mak.onrender.com/links`;
+const API = `https://tinyurl-6mak.onrender.com/api/links`;
 
 export default function Dashboard() {
   const [links, setLinks] = useState([]);
