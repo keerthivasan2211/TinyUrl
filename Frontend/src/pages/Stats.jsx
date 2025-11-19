@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../App.css";
 
-const API = "http://localhost:5000/api/links";
+const API = "https://tinyurl-6mak.onrender.com/api/links";
 
 export default function Stats() {
   const { code } = useParams();
