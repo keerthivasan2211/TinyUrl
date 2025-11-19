@@ -26,7 +26,7 @@ export default function Stats() {
   if (link === false)
     return (
       <div className="stats-container">
-        <div className="stats-card error-box">❌ Link Not Found</div>
+        <div className="stats-card error-box">Link Not Found</div>
         <a href="/" className="back-link">← Back to Dashboard</a>
       </div>
     );
