@@ -1,4 +1,4 @@
-// routes/linksRoutes.js
+
 const express = require("express");
 const router = express.Router();
 
@@ -9,7 +9,7 @@ const {
   deleteLink
 } = require("../Controllers/linksController.js");
 
-// API ROUTES
+
 router.post("/", createLink);
 router.get("/", getLinks);
 router.get("/:code", getSingleLink);
