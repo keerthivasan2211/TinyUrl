@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+
 
 const API = `https://tinyurl-6mak.onrender.com/api/links`;
 
@@ -149,13 +151,14 @@ export default function Dashboard() {
                   <td>{formatDate(l.last_clicked)}</td>
 
                   <td className="actions">
-                    <a
-                      href={`/code/${l.code}`}
-                      className="stats-link"
-                      style={{ color: "green" }}
-                    >
-                      Stats
-                    </a>
+                                      <Link 
+                    to={`/code/${l.code}`} 
+                    className="stats-link"
+                    style={{ color: "green" }}
+                  >
+                    Stats
+                  </Link>
+
 
                     <button className="copy-btn" onClick={() => copyLink(l.code)}>
                       Copy
